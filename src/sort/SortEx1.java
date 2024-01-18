@@ -3,7 +3,8 @@ package sort;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class SortEx {
+public class SortEx1 {
+    //내림차순 다른 방법
     public static void main(String[] args) {
         int A[] = {5, 3, 2, 4, 1};
         Integer[] tmp = Arrays.stream(A).boxed().toArray(Integer[]::new);
