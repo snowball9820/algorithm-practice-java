@@ -7,7 +7,7 @@ public class DebuggingEx {
         //배열에서 주어진 범위의 합을 구함
         Scanner sc = new Scanner(System.in);
         int testcase = sc.nextInt();
-        int answer = 0;
+        int answer = 0; //초기화 잘못
 
         int A[] = new int[100001];
         int S[] = new int[100001];
@@ -15,7 +15,7 @@ public class DebuggingEx {
         for (int i = 1; i < 10000; i++) {
             A[i] = (int) (Math.random() + Integer.MAX_VALUE);
             S[i] = S[i - 1] + A[i];
-        }
+        }//반복 범위 잘못 지정
 
         for (int t = 1; t < testcase; t++) {
             int query = sc.nextInt();
