@@ -10,6 +10,7 @@ public class SumFor2 {
 
         System.out.println("1부터 n까지의 합을 구합니다");
 
+        //0이하를 입력하면 질문 반복
         do {
             System.out.println("n 값: ");
             n = stdIn.nextInt();
