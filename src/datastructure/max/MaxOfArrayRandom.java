@@ -3,7 +3,7 @@ package datastructure.max;
 import java.util.Random;
 import java.util.Scanner;
 
-public class MaxOfArrayRandom {
+class MaxOfArrayRandom {
 
     static int maxOf(int[] a) {
         int max = a[0];
