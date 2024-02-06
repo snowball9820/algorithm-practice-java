@@ -36,7 +36,7 @@ public class ReverseArray2 {
         int[] x = new int[num];
         //for문으로 입력 받은 수 대입
         for (int i = 0; i < num; i++) {
-            System.out.println("x[" + i + "]" + i);
+            System.out.println("x["+i+"]: ");
             x[i] = stdIn.nextInt();
         }
         //reverse메서드 사용해서 배열 a요소를 역순으로 정렬
