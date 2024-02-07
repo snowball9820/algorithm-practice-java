@@ -3,7 +3,7 @@ package datastructure.chap2.ex;
 import java.util.Scanner;
 
 class CardConv {
-    //--- 정숫값 x를 r진수로 변환하여 배열 d에 아랫자리부터 넣어 두고 자릿수를 반환 ---//
+    // 정숫값 x를 r진수로 변환하여 배열 d에 아랫자리부터 넣어 두고 자릿수를 반환
     static int cardConv(int x, int r, char[] d) {
         int digits = 0;                        // 변환 뒤 자릿수
         String dchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -40,7 +40,8 @@ class CardConv {
             do {
                 System.out.print("어떤 진수로 변환할까요?(2-36): ");
                 cd = stdIn.nextInt();
-            } while (cd < 2 || cd > 36);
+            } while (cd < 2 || cd > 36);//2~36 사이의 수가 나올 때 까지 계속 반복하기 위함
+            //2보다 작거나 36보다 큰 수를 입력한다면 계속 어떤 진수로 변환할까요 물어봄
 
             dno = cardConv(no, cd, cno);            // no를 cd 진수로 변환
 
