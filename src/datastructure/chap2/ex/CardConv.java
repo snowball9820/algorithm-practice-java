@@ -9,17 +9,19 @@ class CardConv {
         String dchar = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
         do {
-            d[digits++] = dchar.charAt(x % r);    // r로 나눈 나머지를 저장
-            x /= r;
-        } while (x != 0);
+            d[digits++] = dchar.charAt(x % r);    // r로 나눈 나머지를 저장를 배열 d에 저장하면 됨
+            x /= r; //나누고 나온 몫은 x에 게속 대입
+        } while (x != 0); //x가 0이 아니면 계속 반복
 
         for (int i = 0; i < digits / 2; i++) {    // 배열 d의 숫자 문자열을 역순 정렬
             char t = d[i];
             d[i] = d[digits - i - 1];
             d[digits - i - 1] = t;
         }
+        //저장된 값을 역순으로 바꿔줘야 함
 
         return digits;
+        //변환된 자릿수를 알 수 있음 , 배열 d에 저장된 숫자의 갯수
     }
 
     public static void main(String[] args) {
