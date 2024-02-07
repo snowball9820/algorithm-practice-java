@@ -4,17 +4,26 @@ import java.util.Scanner;
 
 class SeqSearch {
     static int seqSearch(int[] a, int n, int key) {
-        int i=0;
+//        int i=0;
+//
+//        while (true) {
+//            if (i == n) { //i가 n까지 가면 키값을 찾을 수 없다는 의미
+//                return -1;
+//            }
+//            if (a[i] == key) {//검색성공
+//                return i;
+//            }
+//            i++;
+//        }
 
-        while (true) {
-            if (i == n) { //i가 n까지 가면 키값을 찾을 수 없다는 의미
-                return -1;
+//      for문으로 선형검색
+        for (int i=0; i < n; i++) {
+            if (a[i] == key) {
+                return i;//검색 성공 i 반환
             }
-            if (a[i] == key) {//검색성공
-                return i;
-            }
-            i++;
         }
+        return -1;//검색 실패해서 -1반환
+
     }
 
     public static void main(String[] args) {
