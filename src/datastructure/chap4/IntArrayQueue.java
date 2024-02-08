@@ -39,13 +39,15 @@ public class IntArrayQueue {
         if (num <= 0) {
             throw new EmptyIntArrayQueueException();
         }
-        int x = que[0]; //큐가 비어있음
-        for (int i = 0; i < num - 1; i++) {
-            que[i] = que[i + 1];
+        int x = que[0]; //큐가 비어있지 않은 경우, 큐의 첫 번째 원소를 변수 x에 저장
+        for (int i = 0; i < num - 1; i++) {//큐에서 원소를 제거하기 위해 for 루프를 사용,루프는 배열의 첫 번째 원소부터 마지막 원소의 이전 원소까지 반복(num - 1까지).
+            que[i] = que[i + 1]; //각 반복에서는 현재 인덱스의 원소를 그 다음 인덱스의 원소로 덮음. 즉, que[i] = que[i + 1]과 같이 작성
         }
-        num--;
+        num--;//모든 원소를 한 칸씩 앞으로 이동, 이제 큐의 크기를 하나 줄임
         return x;
     }
+// que 배열의 첫 번째 원소를 변수 x에 저장, 나머지 원소들을 한 칸씩 앞으로 당김
+//마지막으로 num을 감소
     public int peek() throws EmptyIntArrayQueueException {
         if (num <= 0)
             throw new EmptyIntArrayQueueException();			// 큐가 비어 있음
@@ -97,3 +99,5 @@ public class IntArrayQueue {
     }
 
 }
+//deque 메서드에서는 원소를 제거하고 나머지 원소들을 한 칸씩 옮기는 과정이 비효율적
+// deque 메서드의 성능을 개선하기 위해서는 배열 대신 연결 리스트 등의 자료구조를 활용
