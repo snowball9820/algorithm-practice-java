@@ -42,35 +42,35 @@ public class IntQueue {
 
     // 큐에서 데이터를 디큐
     public int deque() throws EmptyIntQueueException {
-        if (num <= 0)
+        if (num <= 0)//num이 0이거나 작으면
             throw new EmptyIntQueueException();            // 큐가 비어있음
-        int x = que[front++];
-        num--;
-        if (front == capacity)
+        int x = que[front++];//데이터를 제거한 후 front 증가
+        num--;//데이터 개수는 감소시킴
+        if (front == capacity)//front와 capacity가 같아지면 front 0으로 설정
             front = 0;
-        return x;
+        return x;//x반환
     }
 
     // 큐에서 데이터를 피크(프런트 데이터를 들여다봄)
     public int peek() throws EmptyIntQueueException {
         if (num <= 0)
             throw new EmptyIntQueueException();            // 큐가 비어있음
-        return que[front];
+        return que[front];//큐의 맨앞을 가리키는 변수
     }
 
     //큐를 비움
     public void clear() {
-        num = front = rear = 0;
+        num = front = rear = 0; //모두 0으로 초기화
     }
 
     //큐에서 x를 검색하여 인덱스(찾지 못하면 –1)를 반환
     public int indexOf(int x) {
-        for (int i = 0; i < num; i++) {
+        for (int i = 0; i < num; i++) {//for문으로 큐 맨앞부터 순차적으로 검색
             int idx = (i + front) % capacity;
-            if (que[idx] == x)                // 검색 성공
-                return idx;
+            if (que[idx] == x)                // 현재 인덱스에서 해당하는 데이터와 찾으려는 데이터 x비교
+                return idx;//일치하면 인덱스 반환
         }
-        return -1;                            // 검색 실패
+        return -1;                            // 데이터를 찾지 못한 경우 -1을 반환
     }
 
     //큐의 크기를 반환
