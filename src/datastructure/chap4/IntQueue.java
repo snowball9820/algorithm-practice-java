@@ -19,25 +19,25 @@ public class IntQueue {
 
     // 생성자(constructor)
     public IntQueue(int maxlen) {
-        num = front = rear = 0;
-        capacity = maxlen;
+        num = front = rear = 0; //num,front,rear 모두 0으로 초기화, 큐가 비어있음
+        capacity = maxlen; //capacity 변수에 maxlen할당 생성자를 호출할 때 사용자가 전잘한 큐의 최대용량
         try {
-            que = new int[capacity];          // 큐 본체용 배열을 생성
-        } catch (OutOfMemoryError e) {        // 생성할 수 없음
-            capacity = 0;
+            que = new int[capacity];          // 큐 본체용 배열을 생성,코의 크기는 capacity와 같음
+        } catch (OutOfMemoryError e) {        // 크기를 초과하여 메모리를 할당하려하면 OutOfMemory에러
+            capacity = 0; //예외 발생하면 배열을 생성할 수 없음
         }
     }
 
 
     // 큐에 데이터를 인큐
     public int enque(int x) throws OverflowIntQueueException {
-        if (num >= capacity)
-            throw new OverflowIntQueueException();            // 큐가 가득 찼음
-        que[rear++] = x;
-        num++;
-        if (rear == capacity)
-            rear = 0;
-        return x;
+        if (num >= capacity) //num이 큐의 용량 capacity와 같거나 큰 경우 확인
+            throw new OverflowIntQueueException();            // 큐가 가득 찼음, 예외
+        que[rear++] = x;//큐 끝에 데이터를 추가,rear값 증가
+        num++;//데이터를 추가한 후 데이터 개수도 증가
+        if (rear == capacity) //rear이 큐의 용량과 같아지면
+            rear = 0;//rear를 다시 으로 설정하여 배열 처음으로 돌아가게 함
+        return x; //마지막으로 추가한 x 반환
     }
 
     // 큐에서 데이터를 디큐
