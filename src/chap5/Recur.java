@@ -1,7 +1,7 @@
 package chap5;
 
 import java.util.Scanner;
-
+//하향식
 class Recur {
     static void recur(int n) {
         if (n > 0) {
